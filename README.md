@@ -1,79 +1,107 @@
-```markdown project="Student Score Prediction" file="README.md"
-...
+# Student Score Prediction 📚
+
+## Overview
+This project is a machine learning application that predicts student math scores based on various demographic and academic factors. The system uses Flask to serve a web interface where users can input student information and receive predicted math scores.
+
+![Proof](https://github.com/mustafoyev-202/Student_Score_Prediction/blob/main/proof.png)
+
+
+## Features
+- 🎯 Predicts student math scores with high accuracy
+- 🌐 Web-based interface for easy interaction
+- 📊 Takes into account multiple factors:
+  - Gender
+  - Race/Ethnicity
+  - Parental Education Level
+  - Lunch Type
+  - Test Preparation Course
+  - Reading Score
+  - Writing Score
+
+## Tech Stack
+- Python
+- Flask
+- Scikit-learn
+- Pandas
+- HTML/CSS
+- Machine Learning Algorithms
+
+## Project Structure
+```
+Student_Score_Prediction/
+├── app.py                      # Flask application main file
+├── src/
+│   └── pipeline/
+│       └── predict_pipeline.py # Prediction pipeline
+├── templates/
+│   ├── index.html             # Landing page
+│   └── home.html              # Prediction form page
+└── README.md
 ```
 
-2. Install dependencies
+## Installation
 
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/Student_Score_Prediction.git
+```
 
-```shellscript
+2. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
 pip install -r requirements.txt
 ```
 
-3. Run the application
+## Usage
 
-
-```shellscript
+1. Start the Flask server:
+```bash
 python app.py
 ```
 
-The application will be available at `http://localhost:5000`
-
-## 💡 How to Use
-
-1. Navigate to the homepage
-2. Fill in the required information:
-
-1. Student's gender
-2. Race/ethnicity
-3. Parent's education level
-4. Lunch type
-5. Test preparation course status
-6. Reading score
-7. Writing score
-
-
-
-3. Click "Predict" to get the estimated score
-
-
-## 📊 Project Structure
-
-```plaintext
-Student_Score_Prediction/
-├── app.py                 # Main Flask application
-├── src/
-│   └── pipeline/         # Prediction pipeline
-├── templates/
-│   ├── index.html        # Landing page
-│   └── home.html         # Prediction form
-└── requirements.txt      # Project dependencies
+2. Open your web browser and navigate to:
+```
+http://localhost:5000
 ```
 
-## 🤝 Contributing
+3. Fill in the student information form and submit to get the predicted math score.
 
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](../../issues).
+## API Endpoints
 
-## 📝 License
+- `GET /` - Landing page
+- `GET /predictdata` - Display prediction form
+- `POST /predictdata` - Submit data and get prediction
 
-This project is [MIT](./LICENSE) licensed.
+## Input Features
 
-## ✨ Acknowledgments
+| Feature | Description | Type |
+|---------|------------|------|
+| Gender | Student's gender | Categorical |
+| Race/Ethnicity | Student's race/ethnicity | Categorical |
+| Parental Education | Parent's education level | Categorical |
+| Lunch | Type of lunch | Categorical |
+| Test Preparation | Whether completed prep course | Categorical |
+| Reading Score | Score in reading (0-100) | Numeric |
+| Writing Score | Score in writing (0-100) | Numeric |
 
-- Thanks to all contributors who have helped shape this project
-- Special thanks to the Flask and scikit-learn communities
+## Contributing
 
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📸 Proof of Concept
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
+## Contact
+Your Name - [@mustafoyev-202](https://github.com/mustafoyev-202)
 
+Project Link: https://github.com/mustafoyev-202/Student_Score_Prediction
 
-
-
----
-
-Made with ❤️ for education
-
-```plaintext
-
-This README.md provides a comprehensive overview of the Student Score Prediction project, including its features, setup instructions, usage guidelines, and project structure. I've included emojis to make it more visually appealing and easier to navigate. The structure follows best practices for documentation while keeping it user-friendly and informative.
-```
