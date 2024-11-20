@@ -1,133 +1,79 @@
-```markdown project="Student Performance Predictor" file="README.md"
+```markdown project="Student Score Prediction" file="README.md"
 ...
 ```
 
-2. Create a virtual environment and activate it:
-
-
-```shellscript
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-```
-
-3. Install the required packages:
+2. Install dependencies
 
 
 ```shellscript
 pip install -r requirements.txt
 ```
 
-## 💻 Usage
-
-1. Start the Flask application:
+3. Run the application
 
 
 ```shellscript
 python app.py
 ```
 
-2. Open your web browser and navigate to:
+The application will be available at `http://localhost:5000`
+
+## 💡 How to Use
+
+1. Navigate to the homepage
+2. Fill in the required information:
+
+1. Student's gender
+2. Race/ethnicity
+3. Parent's education level
+4. Lunch type
+5. Test preparation course status
+6. Reading score
+7. Writing score
 
 
-```plaintext
-http://localhost:5000
-```
 
-3. Fill in the required information:
-
-1. Select your gender
-2. Choose your race/ethnicity group
-3. Select parental education level
-4. Specify lunch type
-5. Indicate test preparation course status
-6. Enter your reading and writing scores
+3. Click "Predict" to get the estimated score
 
 
-
-4. Click "Predict Your Math Score" to see the prediction
-
-
-## 🛠️ Technical Details
-
-### Architecture
-
-The application follows a simple MVC architecture:
-
-- Flask web framework for the backend
-- HTML/Bootstrap for the frontend
-- Custom ML pipeline for predictions
-
-
-### Files Structure
+## 📊 Project Structure
 
 ```plaintext
-student-performance-predictor/
-├── app.py                  # Main Flask application
-├── templates/
-│   └── index.html         # Main HTML template
+Student_Score_Prediction/
+├── app.py                 # Main Flask application
 ├── src/
-│   └── pipeline/
-│       └── predict_pipeline.py  # Prediction pipeline
-├── requirements.txt        # Project dependencies
-└── README.md              # Project documentation
-```
-
-### Model Pipeline
-
-The prediction pipeline includes:
-
-- Data preprocessing
-- Feature engineering
-- Model prediction
-- Result formatting
-
-
-## 📊 Sample Code
-
-Here's a snippet of the prediction endpoint:
-
-```python
-@app.route('/predictdata', methods=['GET', 'POST'])
-def predict_datapoint():
-    if request.method == 'POST':
-        data = CustomData(
-            gender=request.form.get('gender'),
-            race_ethnicity=request.form.get('ethnicity'),
-            parental_level_of_education=request.form.get('parental_level_of_education'),
-            lunch=request.form.get('lunch'),
-            test_preparation_course=request.form.get('test_preparation_course'),
-            reading_score=float(request.form.get('reading_score')),
-            writing_score=float(request.form.get('writing_score'))
-        )
-        pred_df = data.get_data_as_data_frame()
-        predict_pipeline = PredictPipeline()
-        results = predict_pipeline.predict(pred_df)
-        return render_template('index.html', results=results[0])
+│   └── pipeline/         # Prediction pipeline
+├── templates/
+│   ├── index.html        # Landing page
+│   └── home.html         # Prediction form
+└── requirements.txt      # Project dependencies
 ```
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](../../issues).
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is [MIT](./LICENSE) licensed.
 
-## 🙏 Acknowledgments
+## ✨ Acknowledgments
 
-- Thanks to all contributors who helped with the development
-- Special thanks to the scikit-learn team for their amazing machine learning library
-- Bootstrap team for the frontend framework
+- Thanks to all contributors who have helped shape this project
+- Special thanks to the Flask and scikit-learn communities
 
 
-## 📧 Contact
+## 📸 Proof of Concept
 
-For any queries or suggestions, please reach out to:
 
-- Email: [your.email@example.com](mailto:your.email@example.com)
-- GitHub: [@yourusername](https://github.com/yourusername)
 
+
+
+---
+
+Made with ❤️ for education
 
 ```plaintext
 
+This README.md provides a comprehensive overview of the Student Score Prediction project, including its features, setup instructions, usage guidelines, and project structure. I've included emojis to make it more visually appealing and easier to navigate. The structure follows best practices for documentation while keeping it user-friendly and informative.
 ```
